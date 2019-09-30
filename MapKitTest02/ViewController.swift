@@ -105,15 +105,18 @@ class ViewController: UIViewController, MKMapViewDelegate {
     // MKMapViewDelegate 메소드
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
+        let theindex = pins
+        
         // pin의 재활용
         let identifier = "RE"
         
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
         
+        // 재활용할 pin이 없으면 pin 생성
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView!.canShowCallout = true
-            annotationView?.pinTintColor = UIColor.blue   // pin 색깔 변경
+            //annotationView?.pinTintColor = UIColor.blue   // pin 색깔 변경
             annotationView?.animatesDrop = true
             
             // 오른쪽 : 상세정보 버튼
@@ -128,6 +131,18 @@ class ViewController: UIViewController, MKMapViewDelegate {
         } else {
             annotationView!.annotation = annotation
         }
+        
+        // pin색깔 변경
+        if annotation.title! == "동의과학대학교"  {
+            annotationView?.pinTintColor = UIColor.red
+        } else {
+            annotationView?.pinTintColor = UIColor.blue
+        }
+        
+        
+        
+        
+        
         return annotationView
     }
     
