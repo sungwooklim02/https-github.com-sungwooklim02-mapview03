@@ -124,9 +124,9 @@ class ViewController: UIViewController, MKMapViewDelegate {
             annotationView?.rightCalloutAccessoryView = btn
             
             // 왼쪽 : 이미지 넣기
-            let imgV = UIImageView(image: UIImage(named: "cat.jpg"))
-            imgV.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-            annotationView?.leftCalloutAccessoryView = imgV
+            //let imgV = UIImageView(image: UIImage(named: "cat.jpg"))
+            //imgV.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+            //annotationView?.leftCalloutAccessoryView = imgV
             
         } else {
             annotationView!.annotation = annotation
@@ -135,8 +135,14 @@ class ViewController: UIViewController, MKMapViewDelegate {
         // pin색깔 변경
         if annotation.title! == "동의과학대학교"  {
             annotationView?.pinTintColor = UIColor.red
+            let imgV = UIImageView(image: UIImage(named: "dit.png"))
+            imgV.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+            annotationView?.leftCalloutAccessoryView = imgV
         } else {
             annotationView?.pinTintColor = UIColor.blue
+            let imgV = UIImageView(image: UIImage(named: "cat.jpg"))
+            imgV.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+            annotationView?.leftCalloutAccessoryView = imgV
         }
         
         
