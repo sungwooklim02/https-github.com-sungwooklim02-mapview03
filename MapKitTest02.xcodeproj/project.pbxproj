@@ -15,6 +15,10 @@
 		0486DDA2232F5348006B3CAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0486DDA1232F5348006B3CAF /* Assets.xcassets */; };
 		0486DDA5232F5348006B3CAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0486DDA3232F5348006B3CAF /* LaunchScreen.storyboard */; };
 		0486DDAE232F53A9006B3CAF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0486DDAD232F53A9006B3CAF /* MapKit.framework */; };
+		F5655A0C2341D9F0009BE0CB /* Bird.png in Resources */ = {isa = PBXBuildFile; fileRef = F5655A092341D9F0009BE0CB /* Bird.png */; };
+		F5655A0D2341D9F0009BE0CB /* Horse.png in Resources */ = {isa = PBXBuildFile; fileRef = F5655A0A2341D9F0009BE0CB /* Horse.png */; };
+		F5655A0E2341D9F0009BE0CB /* Pig.png in Resources */ = {isa = PBXBuildFile; fileRef = F5655A0B2341D9F0009BE0CB /* Pig.png */; };
+		F5655A102341E6E0009BE0CB /* ViewPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5655A0F2341E6E0009BE0CB /* ViewPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		0486DDA4232F5348006B3CAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0486DDA6232F5348006B3CAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0486DDAD232F53A9006B3CAF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F5655A092341D9F0009BE0CB /* Bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Bird.png; path = ../../Bird.png; sourceTree = "<group>"; };
+		F5655A0A2341D9F0009BE0CB /* Horse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Horse.png; path = ../../Horse.png; sourceTree = "<group>"; };
+		F5655A0B2341D9F0009BE0CB /* Pig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pig.png; path = ../../Pig.png; sourceTree = "<group>"; };
+		F5655A0F2341E6E0009BE0CB /* ViewPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,12 +72,16 @@
 			children = (
 				046637432341D69900C60C2F /* dit.png */,
 				046AB5942338ADD500BE187C /* cat.jpg */,
+				F5655A092341D9F0009BE0CB /* Bird.png */,
+				F5655A0A2341D9F0009BE0CB /* Horse.png */,
+				F5655A0B2341D9F0009BE0CB /* Pig.png */,
 				0486DD9A232F5346006B3CAF /* AppDelegate.swift */,
 				0486DD9C232F5346006B3CAF /* ViewController.swift */,
 				0486DD9E232F5347006B3CAF /* Main.storyboard */,
 				0486DDA1232F5348006B3CAF /* Assets.xcassets */,
 				0486DDA3232F5348006B3CAF /* LaunchScreen.storyboard */,
 				0486DDA6232F5348006B3CAF /* Info.plist */,
+				F5655A0F2341E6E0009BE0CB /* ViewPoint.swift */,
 			);
 			path = MapKitTest02;
 			sourceTree = "<group>";
@@ -140,8 +152,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5655A0C2341D9F0009BE0CB /* Bird.png in Resources */,
 				046637442341D69900C60C2F /* dit.png in Resources */,
+				F5655A0E2341D9F0009BE0CB /* Pig.png in Resources */,
 				0486DDA5232F5348006B3CAF /* LaunchScreen.storyboard in Resources */,
+				F5655A0D2341D9F0009BE0CB /* Horse.png in Resources */,
 				0486DDA2232F5348006B3CAF /* Assets.xcassets in Resources */,
 				046AB5952338ADD500BE187C /* cat.jpg in Resources */,
 				0486DDA0232F5347006B3CAF /* Main.storyboard in Resources */,
@@ -156,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0486DD9D232F5346006B3CAF /* ViewController.swift in Sources */,
+				F5655A102341E6E0009BE0CB /* ViewPoint.swift in Sources */,
 				0486DD9B232F5346006B3CAF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

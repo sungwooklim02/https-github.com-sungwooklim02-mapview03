@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 
+
 class ViewController: UIViewController, MKMapViewDelegate {
     
     // 배열 선언
@@ -21,13 +22,14 @@ class ViewController: UIViewController, MKMapViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         // MKMapViewDelegate와 UIViewController(self)
-        mapView.delegate = self
-        
+        //mapView.delegate = self
+        zoomtoRegion()
+        let a = ViewPoint(coordinate: CLLocationCoordinate2D(latitude: 35.104532, longitude: 129.123774), title: "오륙도 해맞이 공원", subtitle: "해안절경 바위")
         
         
         
         // MapType 설정 (standard, hybrid, satellite)
-        mapView.mapType = MKMapType.standard
+        //mapView.mapType = MKMapType.standard
         //mapView.mapType = MKMapType.hybrid
         //mapView.mapType = MKMapType.satellite
         
@@ -48,6 +50,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         
         // pin꼽기
+        /*
         let pin1 = MKPointAnnotation()
         pin1.coordinate = location
         pin1.title = "동의과학대학교"
@@ -81,10 +84,11 @@ class ViewController: UIViewController, MKMapViewDelegate {
         pin4.subtitle = "해변 전망대가 있는 고지대 공원"
         //mapView.addAnnotation(pin4)
         pins.append(pin4)   //배열 pins에 pin4 넣기
+ */
         
         // mapView의 모든 pin들을 나타냄(배열)
         // showAnnotations : 반경 지정 없이 모든 pin을 지도에 나타나게 함
-        mapView.showAnnotations(pins, animated: true)
+        mapView.showAnnotations([a], animated: true)
     }
     
     // MapType 버튼 설정 (standard, hybrid, satellite)
@@ -132,28 +136,48 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         // pin색깔 변경
         if annotation.title! == "동의과학대학교"  {
-            annotationView?.pinTintColor = UIColor.red
+            annotationView?.pinTintColor = UIColor.green
             let imgV = UIImageView(image: UIImage(named: "dit.png"))
             imgV.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
             annotationView?.leftCalloutAccessoryView = imgV
-        } else {
+        } else if annotation.title! == "부산 시민공원"{
             annotationView?.pinTintColor = UIColor.blue
-            let imgV = UIImageView(image: UIImage(named: "cat.jpg"))
-            imgV.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-            annotationView?.leftCalloutAccessoryView = imgV
+            let imgZ = UIImageView(image: UIImage(named: "cat.jpg"))
+            imgZ.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+            annotationView?.leftCalloutAccessoryView = imgZ
+        } else if annotation.title! == "태종대"{
+            annotationView?.pinTintColor = UIColor.yellow
+            let imgX = UIImageView(image: UIImage(named: "Bird.png"))
+            imgX.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+            annotationView?.leftCalloutAccessoryView = imgX
+        } else if annotation.title! == "광안대교"{
+            annotationView?.pinTintColor = UIColor.black
+            let imgC = UIImageView(image: UIImage(named: "Horse.png"))
+            imgC.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+            annotationView?.leftCalloutAccessoryView = imgC
         }
         
         
+     
         
         
         
         return annotationView
     }
     
+    func zoomtoRegion() {
+        let location = CLLocationCoordinate2D(latitude: 35.118002, longitude: 129.121017)
+        let region = MKCoordinateRegion(center: location, latitudinalMeters: 2000.0,longitudinalMeters: 4000.3)
+        mapView.delegate = self
+    }
+    
+    
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
+        
+        
         // 알림창 객체 생성
-        let alert = UIAlertController(title: "동의과학대학교", message: "We Are DIT", preferredStyle: .alert)
+        let alert = UIAlertController(title: (view.annotation?.title)!, message: (view.annotation?.subtitle)!, preferredStyle: .alert)
         
         // 확인 버튼
         let ok = UIAlertAction(title:"확인", style: .default)
