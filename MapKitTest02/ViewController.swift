@@ -105,8 +105,6 @@ class ViewController: UIViewController, MKMapViewDelegate {
     // MKMapViewDelegate 메소드
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        let theindex = pins
-        
         // pin의 재활용
         let identifier = "RE"
         
